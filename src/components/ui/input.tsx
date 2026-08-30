@@ -1,0 +1,18 @@
+import type { InputHTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
+
+export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElement>) {
+  return (
+    <input
+      className={cn(
+        "flex h-11 w-full rounded-md bg-muted px-3 text-sm text-foreground shadow-[var(--shadow-border)]",
+        "placeholder:text-muted-foreground",
+        "transition-[box-shadow] duration-150 ease-out",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+        "disabled:cursor-not-allowed disabled:opacity-50",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
